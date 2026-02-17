@@ -1,0 +1,91 @@
+/* Styles existants pour les pages de collection... (ne pas supprimer) */
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333; /* Couleur de texte générale */
+}
+
+/* Styles spécifiques à la page d'accueil */
+.accueil-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    text-align: center;
+    background-color: #f0f0f0; /* Un fond légèrement gris pour l'accueil */
+}
+
+.accueil-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.accueil-subtitle {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.choix-groupes {
+    display: flex;
+    gap: 30px; /* Espace entre les boutons */
+}
+
+/* Style de base des boutons */
+.bouton-groupe {
+    display: block;
+    padding: 25px 60px;
+    font-size: 2.2rem;
+    font-weight: 900; /* Plus gras pour un look "tribune" */
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+/* Le Rouge OL (VSL) */
+.btn-rouge {
+    background-color: #DA251D;
+    border-bottom: 5px solid #A11B15; /* Effet de relief */
+}
+
+.btn-rouge:hover {
+    background-color: #BE1E16;
+    transform: translateY(-5px);
+}
+
+/* Le Bleu OL (BG) */
+.btn-bleu {
+    background-color: #0055A4;
+    border-bottom: 5px solid #003D76; /* Effet de relief */
+}
+
+.btn-bleu:hover {
+    background-color: #004482;
+    transform: translateY(-5px);
+}
+
+/* Responsive pour la page d'accueil sur mobile */
+@media (max-width: 600px) {
+    .accueil-title {
+        font-size: 2rem;
+    }
+    .accueil-subtitle {
+        font-size: 1.2rem;
+    }
+    .choix-groupes {
+        flex-direction: column; /* Les boutons s'empilent sur mobile */
+        gap: 20px;
+        width: 80%; /* Pour qu'ils prennent plus de place */
+    }
+    .bouton-groupe {
+        padding: 20px 30px;
+        font-size: 1.8rem;
+    }
+}

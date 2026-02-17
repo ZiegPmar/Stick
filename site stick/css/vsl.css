@@ -1,0 +1,106 @@
+/* --- TES STYLES ACTUELS --- */
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex; /* Ajouté pour séparer le menu du contenu */
+}
+
+.main-wrapper {
+    max-width: 1100px;
+    margin-left: 240px; /* Ajouté pour laisser la place au sommaire */
+    flex-grow: 1;
+}
+
+.group-main-title {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    font-style: italic;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.item-title {
+    font-size: 1.1rem;
+    color: #444;
+    margin: 20px 0 10px 0;
+    scroll-margin-top: 20px; /* Évite que le titre soit collé au haut de l'écran lors du clic */
+}
+
+.sticker-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.sticker-grid img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    transition: transform 0.2s;
+}
+
+.sticker-grid img:hover { transform: scale(1.02); }
+
+@media (max-width: 768px) {
+    .sidebar-sommaire { display: none; } /* Cache le menu sur mobile pour plus d'espace */
+    .main-wrapper { margin-left: 0; }
+    .sticker-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* --- NOUVEAUX STYLES DU SOMMAIRE --- */
+.sidebar-sommaire {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fdfdfd;
+    border-right: 1px solid #eaeaea;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar-sommaire h4 {
+    font-size: 14px;
+    border-bottom: 3px solid #DA251D;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.sommaire-section { margin-bottom: 20px; }
+
+.sommaire-section p {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.sommaire-section a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    margin-bottom: 6px;
+    transition: color 0.2s;
+}
+
+.sommaire-section a:hover { color: #DA251D; }
+
+.special-link { color: #DA251D !important; font-weight: bold; }
+
+.back-home {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+}
