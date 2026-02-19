@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stickers Lyon - Archives Bad Gones</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css">
-    <link rel="stylesheet" href="css/bg.css"> </head>
+    <link rel="stylesheet" href="css/bg.css">
+</head>
 <body>
 
-    <nav class="sidebar-sommaire">
+    <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="sidebar-sommaire" id="sidebar">
         <h4>SOMMAIRE</h4>
         <div class="sommaire-section">
             <p>Jeunesse</p>
@@ -18,6 +25,10 @@
         <div class="sommaire-section">
             <p>Noyau</p>
             <a href="#Noyau">Noyau</a>
+        </div>
+        <div class="sommaire-section">
+            <p>Série Spécial</p>
+            <a href="#grenette">Rue Grenette</a>
         </div>
         <div class="sommaire-section">
             <p>SAISONS BG</p>
@@ -58,7 +69,20 @@
             
             <h3 class="item-title" id="Noyau">Noyau</h3>
             <div class="sticker-grid">
-                <a href="img/bg/noyau/IMG_7716.jpg" class="lightbox"><img src="img/bg/noyau/IMG_7716.jpg"></a>
+                </div>
+        </section>
+
+        <section class="category-block">
+            <h2 class="category-title">Série Spécial</h2>
+            
+            <h3 class="item-title" id="grenette">Rue grenette</h3>
+            <p class="item-subtitle">
+                Cette série de stickers a été créée en référence au fight des Lyonnais (virage sud/virage nord) face au MF91 le 29 février 2020 rue de Grenette. Les MF91 ont perdu la bagarre et se sont mis à courir vers le métro A à Cordelier au bout de la rue de Grenette pour échapper aux Lyonnais 
+                <span class="rouge">! Victoire</span> <span class="bleu">lyonnaise !</span>
+            </p>
+            <div class="sticker-grid">
+                <a href="img/bg/special/IMG_7748.jpg" class="lightbox"><img src="img/bg/special/IMG_7748.jpg"></a>
+                <a href="img/bg/special/IMG_7749.jpg" class="lightbox"><img src="img/bg/special/IMG_7749.jpg"></a>
             </div>
         </section>
         
@@ -86,7 +110,7 @@
                 <a href="img/bg/2017/1.jpg" class="lightbox"><img src="img/bg/2017/1.jpg"></a>
             </div>
 
-            <h3 class="item-title" id="s2017">Saison 2018</h3>
+            <h3 class="item-title" id="s2018">Saison 2018</h3>
             <div class="sticker-grid">
                 <a href="img/bg/2018/1.jpg" class="lightbox"><img src="img/bg/2018/1.jpg"></a>
             </div>
@@ -118,7 +142,25 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
     <script>
+        // Initialisation Lightbox
         var lightbox = new SimpleLightbox('.sticker-grid a', { fadeSpeed: 200, showCounter: false });
+
+        // Gestion Menu Mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.sidebar-sommaire a').forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
+        });
     </script>
 </body>
 </html>
