@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche - SSL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css">
+    <link rel="stylesheet" href="../css/bg.css">
+</head>
+<body>
+
+    <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="sidebar-sommaire" id="sidebar">
+        <a href="../page_choix_recherche.html" class="back-home">← Retour</a>
+    </nav>
+
+    <div class="main-wrapper">
+        <h1 class="group-main-title">South Side Lyon</h1>
+        <section class="category-block">
+            <div class="sticker-grid">
+                <a href="../img/recherche/ssl/1.jpg" class="lightbox"><img src="../img/recherche/ssl/1.jpg"></a>
+                <a href="../img/recherche/ssl/2.jpeg" class="lightbox"><img src="../img/recherche/ssl/2.jpeg"></a>
+            </div>
+
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
+    <script>
+        // Initialisation Lightbox
+        var lightbox = new SimpleLightbox('.sticker-grid a', { fadeSpeed: 200, showCounter: false });
+
+        // Gestion Menu Mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.sidebar-sommaire a').forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>
