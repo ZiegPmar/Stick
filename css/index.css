@@ -71,6 +71,16 @@ body {
     transform: translateY(-5px);
 }
 
+.btn-gris {
+    background-color: #5d5d5d;
+    border-bottom: 5px solid #2d2d2d; /* Effet de relief */
+}
+
+.btn-gris:hover {
+    background-color: #2d2d2d;
+    transform: translateY(-5px);
+}
+
 /* Responsive pour la page d'accueil sur mobile */
 @media (max-width: 600px) {
     .accueil-title {
@@ -89,3 +99,4 @@ body {
         font-size: 1.8rem;
     }
 }
+

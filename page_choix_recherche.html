@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archives Stickers Ultra Lyon</title>
+    <link rel="stylesheet" href="css/recherche.css">
+</head>
+<body>
+    <a href="index.html" class="retour-minimaliste">
+        <span>&#8592;</span> Retour
+    </a>
+    <div class="accueil-container">
+        <h1 class="accueil-title">Mes recherches :</h1>
+        <h2 class="accueil-subtitle">Virage Nord</h2>
+        <div class="choix-groupes">
+            <a href="recherche/badgone.html" class="bouton-groupe btn-rouge">Bad Gones</a>
+            <a href="recherche/jeunesse_bg.html" class="bouton-groupe btn-rouge">Jeunesse Bad Gones</a>
+            <a href="recherche/badgone.html" class="bouton-groupe btn-rouge">Jeunesse Con</a>
+            <a href="recherche/badgone.html" class="bouton-groupe btn-rouge">Biberon garde</a>
+        </div>
+        <h2 class="accueil-subtitle">Virage Sud</h2>
+        <div class="choix-groupes">
+            <a href="recherche/lyon1950.html" class="bouton-groupe btn-bleu">Lyon 1950</a>
+            <a href="recherche/jeunesse_1950.html" class="bouton-groupe btn-bleu">Jeunesse 1950</a>
+            <a href="recherche/cosa_nostra.html" class="bouton-groupe btn-bleu">Cosa Nostra</a>
+            <a href="recherche/badgone.html" class="bouton-groupe btn-bleu">Nucleo</a>
+            <a href="recherche/badgone.html" class="bouton-groupe btn-bleu">Lugdunum 93</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    document.querySelectorAll('.bouton-groupe').forEach((btn, index) => {
+        btn.style.opacity = "0";
+        btn.style.transform = "translateY(20px)";
+        
+        setTimeout(() => {
+            btn.style.transition = "all 0.5s ease-out";
+            btn.style.opacity = "1";
+            btn.style.transform = "translateY(0)";
+        }, 100 * index); // Décale l'apparition de chaque bouton
+    });
+</script>

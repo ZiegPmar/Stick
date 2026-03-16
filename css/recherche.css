@@ -1,0 +1,79 @@
+/* --- Bases de la page --- */
+body {
+    background-color: #eee; /* Gris clair comme ton screen */
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accueil-container {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px; /* On limite la largeur pour que ça reste centré */
+    margin-top: 100px;
+}
+
+.accueil-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.accueil-subtitle {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+/* --- LE SYSTEME DE GRILLE (La solution) --- */
+.choix-groupes {
+    display: grid;
+    /* Crée des colonnes de 200px minimum qui se répètent */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; /* Espace entre les boutons */
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* --- Style des boutons --- */
+.bouton-groupe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    
+    height: 120px; /* Hauteur fixe pour que tous les boutons soient identiques */
+    border-radius: 8px;
+    
+    /* Ombre portée comme sur ton screen */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+/* Couleurs */
+.btn-rouge { background-color: #cc3322; }
+.btn-bleu { background-color: #0b53a4; }
+
+/* Effet au survol */
+.bouton-groupe:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+/* --- Bouton Retour --- */
+.retour-minimaliste {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: #333;
+}
