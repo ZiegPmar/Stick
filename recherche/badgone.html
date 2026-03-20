@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche - Jeunesse 1950</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css">
+    <link rel="stylesheet" href="../css/bg.css">
+</head>
+<body>
+
+    <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="sidebar-sommaire" id="sidebar">
+        <a href="../page_choix_recherche.html" class="back-home">← Retour</a>
+    </nav>
+
+    <div class="main-wrapper">
+        <h1 class="group-main-title">Badgone</h1>
+
+        <section class="category-block">
+            <div class="sticker-grid">
+                <a href="../img/recherche/bg/1.jpeg" class="lightbox"><img src="../img/recherche/bg/1.jpeg"></a>
+                <a href="../img/recherche/bg/2.jpeg" class="lightbox"><img src="../img/recherche/bg/2.jpeg"></a>
+                <a href="../img/recherche/bg/3.jpeg" class="lightbox"><img src="../img/recherche/bg/3.jpeg"></a>
+                <a href="../img/recherche/bg/5.jpeg" class="lightbox"><img src="../img/recherche/bg/5.jpeg"></a>
+                <a href="../img/recherche/bg/6.jpeg" class="lightbox"><img src="../img/recherche/bg/6.jpeg"></a>
+                <a href="../img/recherche/bg/7.png" class="lightbox"><img src="../img/recherche/bg/7.png"></a>
+                <a href="../img/recherche/bg/8.jpeg" class="lightbox"><img src="../img/recherche/bg/8.jpeg"></a>
+                <a href="../img/recherche/bg/9.png" class="lightbox"><img src="../img/recherche/bg/9.png"></a>
+                <a href="../img/recherche/bg/10.jpeg" class="lightbox"><img src="../img/recherche/bg/10.jpeg"></a>
+                <a href="../img/recherche/bg/11.png" class="lightbox"><img src="../img/recherche/bg/11.png"></a>
+                <a href="../img/recherche/bg/12.jpeg" class="lightbox"><img src="../img/recherche/bg/12.jpeg"></a>
+                <a href="../img/recherche/bg/13.png" class="lightbox"><img src="../img/recherche/bg/13.png"></a>
+                <a href="../img/recherche/bg/14.png" class="lightbox"><img src="../img/recherche/bg/14.png"></a>
+                <a href="../img/recherche/bg/15.png" class="lightbox"><img src="../img/recherche/bg/15.png"></a>
+                <a href="../img/recherche/bg/16.jpeg" class="lightbox"><img src="../img/recherche/bg/16.jpeg"></a>
+                <a href="../img/recherche/bg/17.jpeg" class="lightbox"><img src="../img/recherche/bg/17.jpeg"></a>
+                <a href="../img/recherche/bg/18.jpeg" class="lightbox"><img src="../img/recherche/bg/18.jpeg"></a>
+                <a href="../img/recherche/bg/19.jpeg" class="lightbox"><img src="../img/recherche/bg/19.jpeg"></a>
+                <a href="../img/recherche/bg/20.jpeg" class="lightbox"><img src="../img/recherche/bg/20.jpeg"></a>
+                <a href="../img/recherche/bg/21.jpeg" class="lightbox"><img src="../img/recherche/bg/21.jpeg"></a>
+                <a href="../img/recherche/bg/22.png" class="lightbox"><img src="../img/recherche/bg/22.png"></a>
+                <a href="../img/recherche/bg/23.jpeg" class="lightbox"><img src="../img/recherche/bg/23.jpeg"></a>
+                <a href="../img/recherche/bg/24.jpeg" class="lightbox"><img src="../img/recherche/bg/24.jpeg"></a>
+                <a href="../img/recherche/bg/25.jpeg" class="lightbox"><img src="../img/recherche/bg/25.jpeg"></a>
+                <a href="../img/recherche/bg/26.jpeg" class="lightbox"><img src="../img/recherche/bg/26.jpeg"></a>
+                <a href="../img/recherche/bg/27.jpeg" class="lightbox"><img src="../img/recherche/bg/27.jpeg"></a>
+                <a href="../img/recherche/bg/28.jpeg" class="lightbox"><img src="../img/recherche/bg/28.jpeg"></a>
+                <a href="../img/recherche/bg/29.png" class="lightbox"><img src="../img/recherche/bg/29.png"></a>
+                <a href="../img/recherche/bg/30.jpeg" class="lightbox"><img src="../img/recherche/bg/30.jpeg"></a>
+                <a href="../img/recherche/bg/31.jpeg" class="lightbox"><img src="../img/recherche/bg/31.jpeg"></a>
+                <a href="../img/recherche/bg/32.jpeg" class="lightbox"><img src="../img/recherche/bg/32.jpeg"></a>
+                <a href="../img/recherche/bg/33.jpeg" class="lightbox"><img src="../img/recherche/bg/33.jpeg"></a>
+                <a href="../img/recherche/bg/34.jpeg" class="lightbox"><img src="../img/recherche/bg/34.jpeg"></a>
+                <a href="../img/recherche/bg/35.jpeg" class="lightbox"><img src="../img/recherche/bg/35.jpeg"></a>
+                <a href="../img/recherche/bg/36.png" class="lightbox"><img src="../img/recherche/bg/36.png"></a>
+                <a href="../img/recherche/bg/37.jpeg" class="lightbox"><img src="../img/recherche/bg/37.jpeg"></a>
+                <a href="../img/recherche/bg/38.png" class="lightbox"><img src="../img/recherche/bg/38.png"></a>
+                <a href="../img/recherche/bg/39.png" class="lightbox"><img src="../img/recherche/bg/39.png"></a>
+                <a href="../img/recherche/bg/40.jpeg" class="lightbox"><img src="../img/recherche/bg/40.jpeg"></a>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
+    <script>
+        // Initialisation Lightbox
+        var lightbox = new SimpleLightbox('.sticker-grid a', { fadeSpeed: 200, showCounter: false });
+
+        // Gestion Menu Mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.sidebar-sommaire a').forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>
