@@ -1,46 +1,56 @@
-/* Styles existants pour les pages de collection... (ne pas supprimer) */
+/* --- Styles de base pour tout le site (Gris et Blanc) --- */
 body {
-    background-color: white;
+    background-color: #ffffff; /* Fond de page blanc pur */
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
-    color: #333; /* Couleur de texte générale */
+    padding: 0; /* Important pour le footer */
+    color: #333333; /* Texte gris très foncé */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Pour pousser le footer vers le bas */
 }
 
-/* Styles spécifiques à la page d'accueil */
+/* --- Styles spécifiques à la page d'accueil --- */
 .accueil-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    flex-grow: 1; /* Prend l'espace disponible */
     text-align: center;
-    background-color: #f0f0f0; /* Un fond légèrement gris pour l'accueil */
+    background-color: #f0f0f0; /* Fond de l'accueil légèrement gris */
+    padding: 20px;
 }
 
 .accueil-title {
     font-size: 2.8rem;
     margin-bottom: 20px;
-    color: #222;
+    color: #1a1a1a; /* Titre presque noir pour la lisibilité */
 }
 
 .accueil-subtitle {
     font-size: 1.5rem;
-    color: #555;
+    color: #666666; /* Sous-titre gris moyen */
     margin-bottom: 50px;
+}
+
+/* Espacement spécifique pour la section des virages */
+.accueil-subtitle.virages-subtitle {
+    margin-bottom: 20px;
 }
 
 .choix-groupes {
     display: flex;
     gap: 30px; /* Espace entre les boutons */
+    margin-bottom: 50px; /* Espace avant le bouton recherches */
 }
 
-/* Style de base des boutons */
+/* --- Style de base des boutons (Style Tribune/Ultra) --- */
 .bouton-groupe {
     display: block;
     padding: 25px 60px;
     font-size: 2.2rem;
-    font-weight: 900; /* Plus gras pour un look "tribune" */
+    font-weight: 900;
     text-decoration: none;
     color: white;
     border-radius: 8px;
@@ -49,10 +59,10 @@ body {
     text-transform: uppercase;
 }
 
-/* Le Rouge OL (VSL) */
+/* --- Couleurs des boutons (Le seul point de couleur) --- */
 .btn-rouge {
-    background-color: #DA251D;
-    border-bottom: 5px solid #A11B15; /* Effet de relief */
+    background-color: #DA251D; /* Rouge VSL */
+    border-bottom: 5px solid #A11B15;
 }
 
 .btn-rouge:hover {
@@ -60,10 +70,9 @@ body {
     transform: translateY(-5px);
 }
 
-/* Le Bleu OL (BG) */
 .btn-bleu {
-    background-color: #0055A4;
-    border-bottom: 5px solid #003D76; /* Effet de relief */
+    background-color: #0055A4; /* Bleu BG */
+    border-bottom: 5px solid #003D76;
 }
 
 .btn-bleu:hover {
@@ -72,8 +81,8 @@ body {
 }
 
 .btn-gris {
-    background-color: #5d5d5d;
-    border-bottom: 5px solid #2d2d2d; /* Effet de relief */
+    background-color: #5d5d5d; /* Gris moyen pour le neutre */
+    border-bottom: 5px solid #2d2d2d;
 }
 
 .btn-gris:hover {
@@ -81,7 +90,37 @@ body {
     transform: translateY(-5px);
 }
 
-/* Responsive pour la page d'accueil sur mobile */
+/* --- Style du Footer (Gris foncé, texte blanc, ligne rouge) --- */
+.footer-site {
+    background-color: #f0f0f0; /* Ton gris très foncé */
+    color: #4c4c4c;
+    text-align: center;
+    padding: 15px 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    border-top: 2px solid #dedddd; /* Ta ligne rouge */
+    box-sizing: border-box; /* Pour un padding propre */
+}
+
+.footer-site p {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-link {
+    color: #4c4c4c; /* Reste blanc comme le texte */
+    text-decoration: none; /* Enlève le soulignement */
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+.footer-link:hover {
+    opacity: 0.7; /* Petit effet de transparence au survol */
+    text-decoration: underline; /* Apparaît seulement quand on passe la souris dessus */
+}
+
+/* --- Responsive pour la page d'accueil (Mobile) --- */
 @media (max-width: 600px) {
     .accueil-title {
         font-size: 2rem;
@@ -90,13 +129,12 @@ body {
         font-size: 1.2rem;
     }
     .choix-groupes {
-        flex-direction: column; /* Les boutons s'empilent sur mobile */
+        flex-direction: column; /* Empilés sur mobile */
         gap: 20px;
-        width: 80%; /* Pour qu'ils prennent plus de place */
+        width: 80%;
     }
     .bouton-groupe {
         padding: 20px 30px;
         font-size: 1.8rem;
     }
 }
-
