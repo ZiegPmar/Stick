@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archives Stickers Ultra Lyon</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <div class="accueil-container">
+        <h1 class="accueil-title">Bienvenue dans la classification des Stickers des supporters de l'ol</h1>
+        <p class="accueil-subtitle">Choisissez votre groupe :</p>
+
+        <div class="choix-groupes">
+            <a href="page_vsl.html" class="bouton-groupe btn-rouge">Virage Sud</a>
+            <a href="page_bg.html" class="bouton-groupe btn-bleu">Virage Nord</a>
+        </div>
+
+        <p class="accueil-subtitle"></p>
+
+        <div class="choix-groupes">
+            <a href="page_choix_recherche.html" class="bouton-groupe btn-gris">Mes recherches</a>
+        </div>
+    </div>
+
+    <footer class="footer-site">
+        <p>
+            &copy; <span id="year"></span> 
+            <a href="https://www.instagram.com/collection_sticks_lyon?igsh=MTNoaHpsYjRwdjhyaQ%3D%3D&utm_source=qr" class="footer-link">collection_sticks_lyon</a> 
+            - Tous droits réservés
+        </p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
