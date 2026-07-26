@@ -1,169 +1,272 @@
-/* --- BASE --- */
+/* --- GOOGLE FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+/* --- VARIABLES --- */
+:root {
+    --primary: #DA251D; /* Rouge Lyon */
+    --primary-hover: #b81c15;
+    --secondary: #1d4ed8; /* Bleu Lyon */
+    --bg-main: #0f172a; /* Dark sleek background */
+    --bg-sidebar: #090d16;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --sidebar-width: 240px;
+    --transition: all 0.2s ease-in-out;
+}
+
+/* --- RESET & BASE --- */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: white;
-    font-family: Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     display: flex;
+    min-height: 100vh;
 }
 
-.main-wrapper {
-    max-width: 1100px;
-    margin-left: 240px; /* Espace pour le menu fixe sur PC */
-    flex-grow: 1;
-}
-
-/* --- TITRES ET TEXTES --- */
-.group-main-title {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-}
-
-.category-title {
-    font-size: 1.5rem;
-    font-style: italic;
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-
-.item-title {
-    font-size: 1.1rem;
-    color: #444;
-    margin: 20px 0 10px 0;
-    scroll-margin-top: 20px;
-}
-
-.item-subtitle {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #666;
-    margin: 5px 0 15px 0;
-    line-height: 1.4;
-}
-
-/* Couleurs Lyon */
-.rouge { color: #DA291C; font-weight: bold; }
-.bleu { color: #002F6C; font-weight: bold; }
-
-/* --- GRILLE STICKERS --- */
-.sticker-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.sticker-grid img {
-    width: 100%;
-    height: auto;
-    border: 1px solid #ddd;
-    transition: transform 0.2s;
-}
-
-.sticker-grid img:hover { transform: scale(1.02); }
-
-/* --- SOMMAIRE (PC) --- */
+/* --- SIDEBAR --- */
 .sidebar-sommaire {
-    width: 200px;
+    width: var(--sidebar-width);
     height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
-    background: #fdfdfd;
-    border-right: 1px solid #eaeaea;
-    padding: 20px;
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    padding: 24px 16px;
     overflow-y: auto;
     z-index: 100;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar-sommaire h4 {
-    font-size: 14px;
-    border-bottom: 3px solid #DA251D;
-    padding-bottom: 5px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 6px;
+    margin-top: 0;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
-.sommaire-section { margin-bottom: 20px; }
+.sommaire-section { 
+    margin-bottom: 18px; 
+}
 
 .sommaire-section p {
-    font-size: 12px;
-    font-weight: bold;
-    color: #999;
-    margin-bottom: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
 }
 
 .sommaire-section a {
     display: block;
     text-decoration: none;
-    color: #333;
-    font-size: 13px;
-    margin-bottom: 6px;
-    transition: color 0.2s;
+    color: #cbd5e1;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 8px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+    transition: var(--transition);
 }
 
-.sommaire-section a:hover { color: #DA251D; }
+.sommaire-section a:hover { 
+    color: #ffffff; 
+    background: rgba(218, 37, 29, 0.15);
+    transform: translateX(3px);
+}
 
 .back-home {
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 12px;
-    color: #666;
+    display: inline-flex;
+    align-items: center;
+    margin-top: auto;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
     text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
-/* --- MENU HAMBURGER (Bouton) --- */
+.back-home:hover {
+    color: #fff;
+    border-color: var(--primary);
+    background: var(--primary);
+}
+
+/* --- MAIN CONTENT WRAPPER --- */
+.main-wrapper {
+    max-width: 1150px;
+    margin-left: var(--sidebar-width);
+    padding: 30px 40px 50px 30px;
+    flex-grow: 1;
+}
+
+/* --- TITRES ET TEXTES --- */
+.group-main-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 20px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.category-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-top: 25px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    scroll-margin-top: 20px;
+}
+
+.category-title::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+
+.item-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin: 18px 0 6px 0;
+    scroll-margin-top: 20px;
+}
+
+.item-subtitle {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #64748b;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+}
+
+/* Couleurs Lyon */
+.rouge { color: var(--primary); font-weight: 700; }
+.bleu { color: #3b82f6; font-weight: 700; }
+
+/* --- GRILLE STICKERS (Format compact & sans cadres) --- */
+.sticker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.sticker-grid a {
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.sticker-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.sticker-grid a:hover {
+    transform: scale(1.04);
+}
+
+/* --- MENU HAMBURGER (MOBILE) --- */
 .menu-toggle {
-    display: none; /* Caché sur PC */
+    display: none;
     position: fixed;
     top: 15px;
     right: 15px;
     z-index: 1001;
-    background: #DA251D;
+    background: var(--primary);
     border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 5px;
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
     cursor: pointer;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
+    box-shadow: 0 4px 12px rgba(218, 37, 29, 0.4);
 }
 
 .menu-toggle span {
     display: block;
-    width: 25px;
-    height: 3px;
+    width: 20px;
+    height: 2px;
     background: white;
-    transition: 0.3s;
+    border-radius: 2px;
+    transition: var(--transition);
 }
 
-/* Animation X quand ouvert */
-.menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.menu-toggle.open span:nth-child(2) { opacity: 0; }
-.menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; transform: scale(0); }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* --- MOBILE (MAX 768px) --- */
+/* --- RESPONSIVE MOBILE & TABLETTE --- */
+@media (max-width: 1024px) {
+    .main-wrapper {
+        padding-right: 30px;
+    }
+}
+
 @media (max-width: 768px) {
-    .menu-toggle { display: flex; }
+    .menu-toggle { 
+        display: flex; 
+    }
 
     .sidebar-sommaire {
-        left: -100%; /* Menu caché à gauche */
-        transition: 0.3s ease;
-        width: 250px;
+        left: -100%;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 240px;
+        box-shadow: 10px 0 30px rgba(0,0,0,0.5);
     }
 
     .sidebar-sommaire.active {
-        left: 0; /* Menu s'affiche */
+        left: 0;
     }
 
     .main-wrapper {
         margin-left: 0;
-        padding-top: 40px;
+        padding: 70px 16px 30px 16px;
     }
 
     .sticker-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 10px;
+    }
+
+    .group-main-title {
+        font-size: 1.25rem;
     }
 }
