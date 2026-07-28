@@ -105,9 +105,9 @@ body {
     left: 0;
     width: 100%;
     display: flex !important;
-    justify-content: center !important;
-    gap: 20px !important;
-    padding: 28px 20px !important;
+    align-items: center !important;
+    justify-content: center !important; /* Maintient le conteneur principal centré */
+    padding: 24px 40px !important;
     z-index: 100;
     transition: var(--transition);
 }
@@ -115,20 +115,30 @@ body {
 .boutons_pages.scrolled {
     background: rgba(9, 13, 22, 0.95);
     backdrop-filter: blur(10px);
-    padding: 16px 20px !important;
+    padding: 14px 40px !important;
     border-bottom: 1px solid var(--border-color);
 }
 
+/* Les 4 boutons principaux parfaitement centrés sur l'écran */
+.nav-links-main {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 auto; /* Centrage strict */
+    transform: none !important;
+}
+
+/* Style de base des boutons */
 .nav-btn, .historique, .calendrier, .contact {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: #ffffff !important;
-    font-size: 1.15rem !important; /* Texte bien lisible */
+    font-size: 1.1rem !important;
     font-weight: 700 !important;
-    padding: 16px 32px !important; /* Taille imposante des boutons */
-    min-width: 180px !important;
+    padding: 14px 28px !important;
+    min-width: 160px !important;
     background-color: rgba(15, 23, 42, 0.85) !important;
     border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
     border-radius: 8px;
@@ -141,6 +151,18 @@ body {
     border-color: var(--primary) !important;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(218, 37, 29, 0.45);
+}
+
+/* Bouton Contact plaqué à droite indépendamment du reste */
+.nav-btn-contact {
+    position: absolute !important;
+    right: 40px !important; /* Même marge que le padding de la nav */
+    min-width: 130px !important;
+    border-color: rgba(218, 37, 29, 0.6) !important;
+}
+
+.nav-btn-contact:hover {
+    background-color: var(--primary) !important;
 }
 
 /* --- SECTION PRESENTATION & RESUME --- */
@@ -237,16 +259,29 @@ body {
 }
 
 /* --- RESPONSIVE MOBILE & TABLETTE --- */
-@media (max-width: 900px) {
+@media (max-width: 950px) {
     .boutons_pages {
-        gap: 10px !important;
-        padding: 16px 12px !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        padding: 12px !important;
+    }
+
+    .nav-links-main {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .nav-btn-contact {
+        position: static !important; /* Repasse dans le flux normal sur petit écran */
+        width: 100%;
     }
 
     .nav-btn, .historique, .calendrier, .contact {
         min-width: auto !important;
-        font-size: 0.95rem !important;
-        padding: 12px 18px !important;
+        font-size: 0.85rem !important;
+        padding: 10px 12px !important;
     }
 }
 
